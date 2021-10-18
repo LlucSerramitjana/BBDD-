@@ -8,10 +8,9 @@ public class Calendari extends Model{
     public int id;
     @ManyToOne
     public User User;
-    public Calendari(String titulo, int id, models.User User){
+    public Calendari(String titulo, int id){
         this.titulo = titulo;
         this.id = id;
-        this.User = User;
     }
 
 }

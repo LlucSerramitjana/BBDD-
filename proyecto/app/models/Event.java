@@ -13,12 +13,11 @@ public class Event extends Model {
     public String Fecha;
     @ManyToOne
     public User User;
-    public Event(String titulo, String descripcion, String HoraIN, String HoraOUT, String Fecha, models.User User){
+    public Event(String titulo, String descripcion, String HoraIN, String HoraOUT, String Fecha){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.HoraIN = HoraIN;
         this.HoraOUT= HoraOUT;
         this.Fecha = Fecha;
-        this.User = User;
     }
 }
