@@ -6,7 +6,6 @@ import play.db.jpa.*;
 
 @Entity
 public class User extends Model {
-    public int id;
     public String password;
     public String fullname;
     public boolean isAdmin;
@@ -15,8 +14,7 @@ public class User extends Model {
     public List<Calendari> calendaris;
     @OneToMany
     public List<Event> events;
-    public User(int id, String password, String fullname) {
-        this.id = id;
+    public User(String password, String fullname) {
         this.password = password;
         this.fullname = fullname;
     }

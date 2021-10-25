@@ -20,9 +20,29 @@ public class Application extends Controller {
             renderText("Abans registrar-se");
     }
 
-    public static void index(int i) {
-        new User(1234, "pwd", "Lluc").save();
-        new User(2345, "pwd1", "Christian").save();
+   public static void index(int i) {
+        new User( "pwd", "Lluc").save();
+       User u1 = new User("pwd1", "Usuari1");
+       u1.save();
+       Event e1 = new Event("Aniversari", "descripcio", "10:00", "12:00", "12/05/22");
+       e1.save();
+       Calendari c1 = new Calendari("Calendari1");
+       c1.save();
+       Calendari c2 = new Calendari("Calendari2");
+       c2.save();
+       u1.calendaris.add(c1);
+       u1.save();
+       u1.calendaris.add(c2);
+       u1.events.add(e1);
+
+       c1.User = u1;
+       c1.save();
+       c2.User = u1;
+       c2.save();
+       e1.User = u1;
+       e1.save();
+
+       u1.save();
     }
     public static void DonarDeBaixaCalendari(String titulo){
         Calendari c = Calendari.find("byTitulo", titulo).first();

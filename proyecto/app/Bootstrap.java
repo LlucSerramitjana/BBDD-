@@ -5,11 +5,11 @@ import models.*;
 @OnApplicationStart
 public class Bootstrap extends Job{
     public void doJob(){
-        if(User.count() == 0){
-            User u1 = new User(1, "pwd1", "Usuari1").save();
-            Event e1 = new Event("Aniversari", "descripcio", "10:00", "12:00", "12/05/22").save();
-            Calendari c1 = new Calendari("Calendari1", 1).save();
-            Calendari c2 = new Calendari("Calendari2",2).save();
+        /*if(User.count() == 0) {
+            User u1 = new User("pwd1", "Usuari1");
+            Event e1 = new Event("Aniversari", "descripcio", "10:00", "12:00", "12/05/22");
+            Calendari c1 = new Calendari("Calendari1");
+            Calendari c2 = new Calendari("Calendari2");
             u1.calendaris.add(c1);
             u1.calendaris.add(c2);
             u1.events.add(e1);
@@ -22,6 +22,6 @@ public class Bootstrap extends Job{
             e1.save();
 
             u1.save();
-        }
+        }*/
     }
 }
