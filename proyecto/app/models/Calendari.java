@@ -8,6 +8,7 @@ public class Calendari extends Model{
     @ManyToOne
     public User User;
     public Calendari(String titulo){
+
         this.titulo = titulo;
     }
 
