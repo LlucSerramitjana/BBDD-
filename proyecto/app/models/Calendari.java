@@ -7,9 +7,10 @@ public class Calendari extends Model{
     public String titulo;
     @ManyToOne
     public User User;
-    public Calendari(String titulo){
 
+    public Calendari(String titulo){
         this.titulo = titulo;
+
     }
 
 }

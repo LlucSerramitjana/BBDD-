@@ -10,11 +10,13 @@ public class User extends Model {
     public String fullname;
     public boolean isAdmin;
 
-   // @OneToMany
-    //public List<Calendari> calendaris;
-    //@OneToMany
-    //public List<Event> events;
-    public User(String fullname, String password) {
+    @OneToMany
+    public List<Calendari> calendaris = new ArrayList();
+
+    @OneToMany
+    public List<Event> events = new ArrayList();
+    public User( String password, String fullname) {
+
         this.password = password;
         this.fullname = fullname;
     }
