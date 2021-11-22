@@ -15,7 +15,7 @@ public class User extends Model {
 
     @OneToMany
     public List<Event> events = new ArrayList();
-    public User( String password, String fullname) {
+    public User( String fullname, String password) {
 
         this.password = password;
         this.fullname = fullname;

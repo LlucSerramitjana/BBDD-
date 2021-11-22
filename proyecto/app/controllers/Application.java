@@ -3,7 +3,7 @@ package controllers;
 import play.*;
 import play.mvc.*;
 import play.db.jpa.JPA;
-
+import play.data.validation.*;
 import java.util.*;
 
 import models.*;
@@ -11,22 +11,23 @@ import models.*;
 import javax.persistence.Query;
 
 public class Application extends Controller {
+
+
+   public static void index(int i) {
+
+       render();
+    }
     public static void login(String Name, String Pwd){
         User us = User.find("byFullnameAndPassword", Name, Pwd).first();
         if(us != null){
+            renderTemplate("Application/Calendari.html");
             renderText("login " + Name);
         }
         else
             renderText("Abans registrar-se");
     }
 
-    public static void index(int i) {
-        new User( "pwd", "Lluc").save();
-        new User( "pwd1", "Christian").save();
 
-
-
-    }
     public static void DonarDeBaixaCalendari(String titulo){
         Calendari c = Calendari.find("byTitulo", titulo).first();
         if(c!=null){
